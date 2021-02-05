@@ -3,3 +3,60 @@
 @import "fonts";
 @import "global";
 @import "media";
+
+/*header start*/
+
+.header {
+    background-color: $light;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        height: 120px;
+        padding: 15px 0;
+    }
+    &__menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        &-list {
+            display: flex;
+            align-items: center;
+        }
+        &-item {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        &-item+.header__menu-item {
+            margin-left: 30px;
+        }
+        &-link {
+            position: relative;
+            padding: 5px 0;
+        }
+        &-link:after,
+        &-link:before {
+            content: '';
+            height: 2px;
+            position: absolute;
+            transition: all 0.35s ease;
+            background-color: $green;
+            width: 0;
+        }
+        &-link:after {
+            bottom: 0;
+            right: 0;
+        }
+        &-link:before {
+            top: 0;
+            left: 0;
+        }
+        &-link:hover:after,
+        &-link:hover:before {
+            width: 100%;
+        }
+    }
+}
+
+
+/*header end*/

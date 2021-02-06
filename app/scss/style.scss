@@ -105,7 +105,6 @@
         font-size: 24px;
         line-height: 24px;
     }
-    &__item-btn {}
 }
 
 
@@ -152,7 +151,8 @@
     &__card+.products__card {
         margin-top: 50px;
     }
-    &__card-img {
+    &__card-img,
+    {
         height: 250px;
         width: 250px;
         align-content: center;
@@ -161,7 +161,8 @@
         border-radius: 3px;
         background-color: #fff;
     }
-    &__card-img img {
+    &__card-img img,
+    {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -201,13 +202,6 @@
         justify-content: left;
     }
     &__card-input {
-        padding: 5px 15px;
-        outline: none;
-        border: none;
-        border-radius: 3px;
-        font-size: 20px;
-        line-height: 22px;
-        letter-spacing: 0.06em;
         width: 150px;
         margin-right: 15px;
     }
@@ -244,3 +238,108 @@
 
 
 /*products end*/
+
+
+/*order start*/
+
+.order {
+    background-color: $green;
+    &__inner {
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 600px;
+        align-items: center;
+        text-align: left;
+        background-color: $light;
+        padding: 10px;
+        border-radius: 3px;
+        margin: 20px auto 0;
+        &:hover .order__card-delete {
+            display: block;
+        }
+    }
+    &__card+.products__card {
+        margin-top: 30px;
+    }
+    &__card-img {
+        height: 100px;
+        width: 100px;
+        align-content: center;
+        overflow: hidden;
+        position: relative;
+        border-radius: 3px;
+        background-color: #fff;
+    }
+    &__card-img img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        max-height: 100px;
+    }
+    &__card-info {
+        width: 450px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 20px;
+    }
+    &__card-delete {
+        position: absolute;
+        top: -7px;
+        right: -7px;
+        display: none;
+        width: 30px;
+        height: 30px;
+        background-color: $yellow;
+        border-radius: 50%;
+        padding: 5px;
+        transform: rotate(45deg);
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: $orange;
+        }
+    }
+    &__form {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__form-title {
+        margin-bottom: 20px;
+    }
+    &__input {
+        margin-bottom: 20px;
+        width: 600px;
+        font-size: 16px;
+    }
+    &__total {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 22px;
+        & span {
+            color: #fff;
+        }
+    }
+    &__price-info {
+        display: block;
+        font-size: 14px;
+        margin-top: 15px;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+
+/*order end*/

@@ -146,7 +146,7 @@
                                 Введите нужное количество:
                             </p>
                             <form class="products__card-form">
-                                <input type="number" class="products__card-input" placeholder="0">
+                                <input type="number" class="products__card-input input" placeholder="0">
                                 <button class="products__card-btn"></button>
                             </form>
                         </div>
@@ -166,7 +166,7 @@
                                 Введите нужное количество:
                             </p>
                             <form class="products__card-form">
-                                <input type="number" class="products__card-input" placeholder="0">
+                                <input type="number" class="products__card-input input" placeholder="0">
                                 <button class="products__card-btn"></button>
                             </form>
                         </div>
@@ -186,14 +186,65 @@
                                 Введите нужное количество:
                             </p>
                             <form class="products__card-form">
-                                <input type="number" class="products__card-input" placeholder="0">
+                                <input type="number" class="products__card-input input" placeholder="0">
                                 <button class="products__card-btn"></button>
                             </form>
                         </div>
                     </div>
 
-
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="order">
+        <div class="container">
+            <div class="order__inner">
+                <h3 class="container__title section__title">
+                    Ваш заказ
+                </h3>
+                <div class="order__title-decoration section__title-decoration">
+                    <img class="order__title-icon section__title-icon" src="images/harvest-yellow.svg" alt="section title icon">
+                </div>
+
+                <div class="order__box">
+                    <div class="order__card">
+                        <div class="order__card-img">
+                            <img src="images/content/product-2.jpg" alt="product image">
+                        </div>
+                        <div class="order__card-info">
+                            <span class="order__card-name">Бройлер домашний</span>
+                            <span class="order__card-num">1 шт.</span>
+                            <span class="order__card-sum">150 грн.</span>
+                        </div>
+                        <img class="order__card-delete" src="images/plus.svg" alt="close img">
+
+                    </div>
+                    <p class="order__total">
+                        Ориентировочная сумма к оплате <span>150 грн</span>.
+                        <a class="order__price-info" href="#">
+                            Подробнее о подсчете суммы заказа.
+                        </a>
+                    </p>
+                    <form class="order__form">
+                        <p class="order__form-title">
+                            Для подтверждения заказа заполните форму ниже:
+                        </p>
+                        <input class="order__input input" type="text" placeholder="Имя" required>
+                        <input class="order__input input" type="text" placeholder="Телефон" required>
+                        <input class="order__input input" type="text" placeholder="Адрес" required>
+                        <textarea class="order__input input" rows="5" placeholder="Комментарий"></textarea>
+                        <button class="btn">
+                            Подтвердить заказ
+                        </button>
+                    </form>
+                </div>
+                <!-- <div class="top__item-btn">
+                    <a class="btn" href="#">
+                            Подтвердить заказ
+                        </a>
+                </div> -->
             </div>
         </div>
     </section>

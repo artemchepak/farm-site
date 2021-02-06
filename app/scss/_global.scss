@@ -66,6 +66,8 @@ a:focus {
     box-shadow: inset 0 0 0 0 $orange;
     transition: ease-out 0.4s;
     border-radius: 3px;
+    text-transform: uppercase;
+    border: none;
 }
 
 .btn:hover {
@@ -74,6 +76,17 @@ a:focus {
 
 .btn:active {
     box-shadow: inset 0 0 0 40px $orange-active;
+}
+
+.input {
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0.06em;
+    resize: none;
 }
 
 .slick-dots {

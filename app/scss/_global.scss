@@ -58,6 +58,11 @@ a:focus {
     margin: 0 auto;
 }
 
+.section__inner {
+    padding-bottom: 60px;
+    text-align: center;
+}
+
 .btn {
     font-weight: 700;
     background-color: $yellow;
@@ -127,11 +132,20 @@ a:focus {
     text-transform: uppercase;
 }
 
+.section__subtitle {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    margin: 25px 0 50px;
+}
+
 .section__text {
     font-size: 16px;
     line-height: 22px;
     text-align: center;
-    padding: 12px 0 50px;
+    margin-top: 12px;
 }
 
 .section__title-decoration {

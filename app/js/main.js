@@ -14,3 +14,20 @@ $(function() {
         $(this).toggleClass('products__card-btn--active');
     });
 });
+
+//about
+
+const familyMembers = document.querySelectorAll('.about__family-member');
+
+familyMembers.forEach(familyMember => {
+    familyMember.addEventListener('click', () => {
+        removeActiveClasses()
+        familyMember.classList.add('active');
+    })
+})
+
+function removeActiveClasses() {
+    familyMembers.forEach(familyMember => {
+        familyMember.classList.remove('active');
+    })
+}

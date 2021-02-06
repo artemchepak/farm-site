@@ -3,16 +3,16 @@
 @import "fonts";
 @import "global";
 @import "media";
+@import "animation";
 
 /*header start*/
 
 .header {
-    background-color: $light;
     &__inner {
         display: flex;
         justify-content: space-between;
-        height: 120px;
-        padding: 15px 0;
+        height: 87px;
+        padding: 7px 0;
     }
     &__menu {
         display: flex;
@@ -33,6 +33,7 @@
         &-link {
             position: relative;
             padding: 5px 0;
+            text-transform: uppercase;
         }
         &-link:after,
         &-link:before {
@@ -60,3 +61,73 @@
 
 
 /*header end*/
+
+
+/*top start*/
+
+.top {
+    background-color: #000;
+    max-height: 700px;
+    &__item {
+        position: relative;
+        height: 700px;
+        overflow: hidden;
+    }
+    &__item-img {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 0.4;
+    }
+    &__item-text {
+        position: absolute;
+        color: $light;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    &__item-title {
+        margin-bottom: 65px;
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 75px;
+        letter-spacing: 0.1em;
+    }
+    &__item-subtitle {
+        margin-bottom: 65px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+    }
+    &__item-btn {}
+}
+
+
+/*top end*/
+
+
+/*info start*/
+
+.info {
+    background-color: $green;
+    // &__inner{
+    //     text-align: center;
+    // }
+    &__delivery-date {
+        font-weight: 900;
+        text-decoration: underline;
+        margin: 0;
+    }
+}
+
+
+/*info end*/
+
+
+/*products start*/
+
+
+/*products end*/

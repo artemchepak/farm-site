@@ -428,3 +428,51 @@
 
 
 /*about end*/
+
+
+/*faq start*/
+
+.faq {
+    background-color: $green;
+    &__box {
+        margin-top: 30px;
+    }
+    &__list-drop {
+        text-align: left;
+    }
+    &__list-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #053700;
+        padding-left: 27px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        position: relative;
+        border-bottom: 2px dashed $yellow;
+        padding-bottom: 12px;
+        &::before {
+            content: '';
+            background-image: url(../images/arrow-down.svg);
+            position: absolute;
+            left: 0;
+            bottom: 19px;
+            width: 12px;
+            height: 8px;
+            transform: rotate(180deg);
+            transition: all 0.4s;
+        }
+    }
+    &__list-title--active::before {
+        transform: rotate(0deg);
+    }
+    &__list-drop+.faq__list-drop {
+        margin-top: 30px;
+    }
+    &__list-text {
+        display: none;
+    }
+}
+
+
+/*faq end*/

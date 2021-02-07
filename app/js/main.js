@@ -13,6 +13,12 @@ $(function() {
         e.preventDefault();
         $(this).toggleClass('products__card-btn--active');
     });
+
+    //faq
+    $('.faq__list-title').on('click', function(e) {
+        $(this).toggleClass('faq__list-title--active');
+        $(this).next().slideToggle('200');
+    });
 });
 
 //about

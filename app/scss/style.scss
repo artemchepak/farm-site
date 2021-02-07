@@ -131,6 +131,9 @@
 /*products start*/
 
 .products {
+    &__cards {
+        margin-top: 30px;
+    }
     &__card {
         display: flex;
         justify-content: space-between;
@@ -476,3 +479,41 @@
 
 
 /*faq end*/
+
+
+/*footer start*/
+
+.footer {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+    &__logo {
+        height: 100px;
+    }
+    &__info-list {
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: center;
+    }
+    &__info-item+.footer__info-item {
+        margin-top: 20px;
+    }
+    &__socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__socials-link+.footer__socials-link {
+        margin-left: 20px;
+    }
+    &__socials-img {
+        width: 50px;
+    }
+}
+
+
+/*footer end*/

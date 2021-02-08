@@ -148,8 +148,7 @@
     &__card+.products__card {
         margin-top: 50px;
     }
-    &__card-img,
-    {
+    &__card-img {
         height: 250px;
         width: 250px;
         align-content: center;
@@ -158,8 +157,7 @@
         border-radius: 3px;
         background-color: #fff;
     }
-    &__card-img img,
-    {
+    &__card-img img {
         position: absolute;
         top: 50%;
         left: 50%;

@@ -2,7 +2,6 @@
 @import "libs";
 @import "fonts";
 @import "global";
-@import "media";
 @import "animation";
 
 /*header start*/
@@ -60,6 +59,17 @@
         &-link:hover:before {
             width: 100%;
         }
+        &-btn {
+            width: 43px;
+            display: none;
+            margin-right: 20px;
+        }
+        &-row {
+            width: 100%;
+            background-color: $dark;
+            height: 5px;
+            margin-bottom: 7px;
+        }
     }
 }
 
@@ -72,6 +82,9 @@
 .top {
     background-color: #000;
     max-height: 700px;
+    &__inner {
+        padding-bottom: 0;
+    }
     &__item {
         position: relative;
         height: 700px;
@@ -104,7 +117,7 @@
         margin-bottom: 65px;
         font-weight: 700;
         font-size: 24px;
-        line-height: 24px;
+        line-height: 32px;
     }
 }
 
@@ -401,8 +414,8 @@
         row-gap: 30px;
         column-gap: 30px;
         margin: 0 auto;
-        height: 1000px;
-        max-width: 100%;
+        min-height: 1000px;
+        width: 100%;
     }
     &__family-farm-img {
         background-repeat: no-repeat;
@@ -488,7 +501,8 @@
         padding: 20px 0;
     }
     &__logo {
-        height: 100px;
+        width: 160px;
+        align-self: center;
     }
     &__info-list {
         font-weight: 700;
@@ -515,3 +529,5 @@
 
 
 /*footer end*/
+
+@import "media";

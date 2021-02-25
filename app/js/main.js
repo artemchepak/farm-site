@@ -1,7 +1,7 @@
-$(function() {
+jQuery(function() {
     //top slider 
 
-    $('.top__inner').slick({
+    jQuery('.top__inner').slick({
         arrows: false,
         dots: true,
         autoplay: true,
@@ -9,20 +9,20 @@ $(function() {
     });
 
     //products__card-btn   
-    $('.products__card-btn').on('click', function(e) {
+    jQuery('.products__card-btn').on('click', function(e) {
         e.preventDefault();
-        $(this).toggleClass('products__card-btn--active');
+        jQuery(this).toggleClass('products__card-btn--active');
     });
 
     //faq
-    $('.faq__list-title').on('click', function(e) {
-        $(this).toggleClass('faq__list-title--active');
-        $(this).next().slideToggle('200');
+    jQuery('.faq__list-title').on('click', function(e) {
+        jQuery(this).toggleClass('faq__list-title--active');
+        jQuery(this).next().slideToggle('200');
     });
 
 
     //farm gallery
-    $('.about__family-farm').magnificPopup({
+    jQuery('.about__family-farm').magnificPopup({
         delegate: 'a',
         type: 'image',
         tLoading: 'Loading image #%curr%...',
@@ -39,8 +39,8 @@ $(function() {
     });
 
     //burger-menu
-    $('.header__menu-btn').on('click', function() {
-        $('.header__menu > ul').slideToggle();
+    jQuery('.header__menu-btn').on('click', function() {
+        jQuery('.header__menu > ul').slideToggle();
     });
 
 
@@ -48,7 +48,7 @@ $(function() {
     //adding order items
     let countTotalOrderSum = function() {
 
-        const orderTotal = $('.order__total-num');
+        const orderTotal = jQuery('.order__total-num');
         const sum = [];
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         const orderCardSum = document.querySelectorAll('.order__card-sum');
@@ -59,62 +59,74 @@ $(function() {
         orderTotal.text(sum.reduce(reducer));
     }
 
-
-    $('.products__card-btn').on('click', function() {
-        let $cardName = $($(this).parent().parent()[0].childNodes[1]).text(),
-            $cardPrice = $($(this).parent().parent()[0].childNodes[3].childNodes[1]).text(),
-            $cardAmount = $($(this).parent()[0].childNodes[1]).val(),
-            $cardImageLink = $(this).parent().parent().siblings()[0].childNodes[1].getAttribute('src'),
-            $orderCardsContainer = $('.order__cards');
+    $orderArray = [];
+    jQuery('.products__card-btn').on('click', function() {
+        let $cardName = jQuery(jQuery(this).parent().parent()[0].childNodes[1]).text(),
+            $cardPrice = jQuery(jQuery(this).parent().parent()[0].childNodes[3].childNodes[1]).text(),
+            $cardAmount = jQuery(jQuery(this).parent()[0].childNodes[1]).val(),
+            $cardImageLink = jQuery(this).parent().parent().siblings()[0].childNodes[1].getAttribute('src'),
+            $orderCardsContainer = jQuery('.order__cards');
+        $orderForm = jQuery('.wpcf7-form');
 
         if ($cardAmount < 1) {
             alert('Укажите желаемое количество товара');
-            // $(this).addClass('.test');
-            $(this).removeClass('products__card-btn--active');
+            // jQuery(this).addClass('.test');
+            jQuery(this).removeClass('products__card-btn--active');
             return false;
         }
 
-        $(this).prop("disabled", true);
+        jQuery(this).prop("disabled", true);
 
         //add card
         $orderCardsContainer.append(
-            '<div class="order__card"><div class="order__card-img"><img src="' + $cardImageLink + '" alt="product image"></div><div class="order__card-info"><span class="order__card-name">' + $cardName + '</span><span class="order__card-num">' + $cardAmount + ' шт.</span><span ><span class="order__card-sum">' + ($cardPrice * $cardAmount) + '</span> грн.</span></div><img class="order__card-delete" src="images/plus.svg" alt="close img"></div>'
+            '<div class="order__card"><div class="order__card-img"><img src="' + $cardImageLink + '" alt="product image"></div><div class="order__card-info"><span class="order__card-name">' + $cardName + '</span><span class="order__card-num">' + $cardAmount + '</span><span ><span class="order__card-sum">' + ($cardPrice * $cardAmount) + '</span> грн.</span></div><div class="order__card-delete"></div></div>'
         );
+
+        $orderArray.push($cardName + '-' + $cardAmount);
 
         countTotalOrderSum();
 
-        //remove card
-        $('.order__card-delete').on('click', function() {
+        //add input to order form
+        $orderItemName = $cardName.replace(' ', '_');
 
-            let $parent = $(this).parent(),
-                $allCardNames = document.querySelectorAll('.products__card-name'),
-                $allCardBtns = document.querySelectorAll('.products__card-btn'),
-                $allCardNamesArray = [],
-                $cardPosition = undefined;
+        $orderForm.append('<p style="display:none"><span class="wpcf7-form-control-wrap client-order"><input type="text" name="' +
+            $orderItemName + '" value="" size="40" class="wpcf7-form-control wpcf7-text order__input input" id="' +
+            $orderItemName + '" aria-invalid="false"/></span></p>');
+
+        $('#' + $orderItemName + '').val($cardAmount);
+
+
+        //remove card
+        jQuery('.order__card-delete').on('click', function() {
+
+            $parent = jQuery(this).parent();
+            $allCardNames = document.querySelectorAll('.products__card-name');
+            $allCardBtns = document.querySelectorAll('.products__card-btn');
+            $allCardNamesArray = [];
+            $cardPosition = undefined;
+
+            $deletedCardName = jQuery(jQuery(this).siblings()[1].childNodes[0]).text().replace(' ', '_');
+            console.log($deletedCardName);
 
             for (n of $allCardNames) {
-                $allCardNamesArray.push($(n.childNodes[0]).text());
+                $allCardNamesArray.push(jQuery(n.childNodes[0]).text());
             }
 
             $cardPosition = $allCardNamesArray.indexOf($cardName);
-            $($allCardBtns[$cardPosition]).removeClass('products__card-btn--active');
-            $($allCardBtns[$cardPosition]).prop("disabled", false);
+            jQuery($allCardBtns[$cardPosition]).removeClass('products__card-btn--active');
+            jQuery($allCardBtns[$cardPosition]).prop("disabled", false);
 
-
-
-            console.log($allCardBtns);
             $parent.remove();
             countTotalOrderSum();
+
+            //remove input to order form
+
+            jQuery('#' + $deletedCardName).remove();
 
 
 
         })
-
-
-
-
     })
-
 
 });
 

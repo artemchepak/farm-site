@@ -2,7 +2,9 @@
 
 Family farm website - Wordpress Theme created from scratch  
 
-[Demo link](http://a95211av.beget.tech/)
+[Demo link](http://a95211av.beget.tech/)  
+
+## Project decription
 
 This site was made to meet the real needs of picking orders for one my ex-coworker. Currently she's collecting orders sending emails by-weekly, directly to her clients.
 I decided to make a service that would make communication with customers easier, while the method of collecting orders, in fact, remained familiar - Google Sheets.
